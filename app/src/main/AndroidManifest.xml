@@ -12,6 +12,9 @@
         android:theme="@style/Theme.StartActivity"
         tools:targetApi="33">
         <activity
+            android:name=".DashboardActivity"
+            android:exported="false" />
+        <activity
             android:name=".PowerUsageActivity"
             android:exported="false" />
         <activity
