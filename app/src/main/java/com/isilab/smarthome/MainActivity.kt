@@ -6,7 +6,8 @@ import android.os.Bundle
 import android.widget.Button
 
 class MainActivity : AppCompatActivity() {
-    lateinit var startButton: Button
+    private lateinit var startButton: Button
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -14,6 +15,7 @@ class MainActivity : AppCompatActivity() {
         startButton = findViewById(R.id.start_button)
         startButton.setOnClickListener {
 //            startActivity(Intent(this,PowerUsageActivity::class.java))
+            startActivity(Intent(this, DashboardActivity::class.java))
         }
     }
 }

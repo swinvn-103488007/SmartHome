@@ -3,26 +3,27 @@ package com.isilab.smarthome
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import androidx.core.view.get
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
-class DashboardActivity : AppCompatActivity() {
-
+class RoomActivity : AppCompatActivity() {
     private lateinit var bottomNavigationView: BottomNavigationView
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_dashboard)
+        setContentView(R.layout.activity_room)
 
         bottomNavigationView = findViewById(R.id.bottomNavigationView)
-        bottomNavigationView.selectedItemId = R.id.dashboard
+        bottomNavigationView.selectedItemId = R.id.room
 
         bottomNavigationView.setOnItemSelectedListener {
             when(it.itemId) {
-                R.id.dashboard -> true
-                R.id.room -> {
-                    startActivity(Intent(this, RoomActivity::class.java))
+                R.id.dashboard -> {
+                    startActivity(Intent(this, DashboardActivity::class.java))
                     overridePendingTransition(0, 0)
                     finish()
+                    true
+                }
+                R.id.room -> {
                     true
                 }
                 R.id.statistics -> {
@@ -42,6 +43,5 @@ class DashboardActivity : AppCompatActivity() {
                 }
             }
         }
-
     }
 }
