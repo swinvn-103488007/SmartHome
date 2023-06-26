@@ -1,17 +1,165 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".DashboardActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Dashboard"
-        android:textSize="24dp" />
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/dashboard_title_widget"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Dashboard"
+                android:textSize="24sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:layout_editor_absoluteX="25dp"
+                tools:layout_editor_absoluteY="32dp" />
+
+            <ImageView
+                android:id="@+id/btn_add_device"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ic_add"
+                tools:layout_editor_absoluteX="334dp"
+                tools:layout_editor_absoluteY="32dp" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <HorizontalScrollView
+            android:id="@+id/top_carousel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/dashboard_title_widget">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/top_carousel_layout_1"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content">
+
+
+                    <ImageView
+                        android:id="@+id/top_carousel_layout_1_img"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:srcCompat="@drawable/ic_tv" />
+
+                    <TextView
+                        android:id="@+id/top_carousel_layout_1_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Smart TV"
+                        app:layout_constraintStart_toEndOf="@+id/top_carousel_layout_1_img"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/top_carousel_layout_1_desc"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="2 Active"
+                        app:layout_constraintStart_toEndOf="@id/top_carousel_layout_1_img"
+                        app:layout_constraintTop_toBottomOf="@+id/top_carousel_layout_1_name" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/top_carousel_layout_2"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content">
+
+
+                    <ImageView
+                        android:id="@+id/top_carousel_layout_2_img"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:srcCompat="@drawable/ic_tv" />
+
+                    <TextView
+                        android:id="@+id/top_carousel_layout_2_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Smart TV"
+                        app:layout_constraintStart_toEndOf="@+id/top_carousel_layout_2_img"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/top_carousel_layout_2_desc"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="2 Active"
+                        app:layout_constraintStart_toEndOf="@id/top_carousel_layout_2_img"
+                        app:layout_constraintTop_toBottomOf="@+id/top_carousel_layout_2_name" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/top_carousel_layout_3"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content">
+
+
+                    <ImageView
+                        android:id="@+id/top_carousel_layout_3_img"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_bias="0.466"
+                        app:srcCompat="@drawable/ic_tv" />
+
+                    <TextView
+                        android:id="@+id/top_carousel_layout_3_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Smart TV"
+                        app:layout_constraintStart_toEndOf="@+id/top_carousel_layout_3_img"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/top_carousel_layout_3_desc"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="2 Active"
+                        app:layout_constraintStart_toEndOf="@id/top_carousel_layout_3_img"
+                        app:layout_constraintTop_toBottomOf="@+id/top_carousel_layout_3_name" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </LinearLayout>
+        </HorizontalScrollView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottomNavigationView"
@@ -19,8 +167,8 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         app:itemIconSize="28dp"
-        app:menu="@menu/bottom_menu"
         app:itemIconTint="@drawable/selector"
-        app:itemTextColor="@drawable/selector"/>
+        app:itemTextColor="@drawable/selector"
+        app:menu="@menu/bottom_menu" />
 
 </RelativeLayout>
